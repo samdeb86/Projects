@@ -1,0 +1,514 @@
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Reset & Color Variables – Only three colors used */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary: #ffffff; /* White */
+  --secondary: #da0c0c; /* Red – reserved for chef badge and hover effects */
+  --dark: #0c0c0c; /* Black */
+}
+html {
+  font-size: 10px;
+}
+body {
+  background-color: var(--dark);
+  color: var(--primary);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+.line-break {
+  display: block;
+}
+/* Global Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Banner Wrapper with Overlay */
+.banner-wrapper {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url("images/2148425613.jpg") center/cover no-repeat;
+  width: 100%;
+  animation: fadeInUp 1s ease-out;
+}
+/* Header Section */
+header.main-header {
+  padding: 4rem 10rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--dark);
+}
+nav.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--primary);
+  white-space: nowrap;
+}
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+/* Use red for hover effects on nav links */
+.nav-links a:hover {
+  color: var(--secondary);
+}
+/* Hero Section – Enlarged and Left Aligned */
+section.hero {
+  padding: 10rem 10rem 14rem;
+}
+.hero-content {
+  max-width: 800px;
+  text-align: left;
+  animation: fadeInUp 1s ease-out;
+}
+.hero-content h1 {
+  font-family: "Lobster", cursive;
+  font-size: 12rem;
+  font-weight: 100;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.hero-content .tagline {
+  font-family: "Imperial Script", cursive;
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+.hero-content .sub-text {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+.cta-button {
+  background-color: var(--primary);
+  color: var(--dark);
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  text-decoration: none;
+  font-family: "Lobster", cursive;
+  font-size: 2.5rem;
+  border-radius: 60px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+/* Use red for hover on call-to-action button */
+.cta-button:hover {
+  background-color: var(--secondary);
+  transform: scale(1.05);
+}
+/* Main Wrapper */
+main {
+  overflow-x: hidden;
+}
+/* About Section – White Background, Dark Text */
+section.about-section {
+  padding: 8rem 10rem;
+  background-color: var(--primary);
+  color: var(--dark);
+  animation: fadeInUp 1s ease-out;
+}
+.about-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4rem;
+}
+.about-content {
+  flex: 1 1 60%;
+}
+.about-content h2 {
+  font-family: "Lobster", cursive;
+  font-size: 6rem;
+  margin-bottom: 2rem;
+}
+.about-content p {
+  font-size: 1.8rem;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+.about-content blockquote {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  border-left: 4px solid var(--secondary);
+  padding-left: 1rem;
+}
+.chef-image {
+  flex: 1 1 35%;
+  text-align: center;
+}
+.chef-image img {
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Menu Section */
+section.menu-section {
+  padding: 8rem 10rem;
+  animation: fadeInUp 1s ease-out;
+}
+section.menu-section h2 {
+  font-family: "Lobster", cursive;
+  font-size: 6rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+}
+/* Menu items now less tall – adjusted aspect ratio */
+.menu-item {
+  flex: 1 1 300px;
+  max-width: 300px;
+  position: relative;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+}
+.image-container {
+  position: relative;
+}
+.image-container img {
+  width: 100%;
+  aspect-ratio: 1 / 1.4;
+  object-fit: cover;
+  display: block;
+}
+.item-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+  color: var(--primary);
+  text-align: center;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: background 0.3s ease;
+}
+.item-title:hover {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6));
+}
+.item-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+  color: var(--primary);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.menu-toggle {
+  display: none;
+}
+.menu-toggle:checked ~ .image-container .item-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.description {
+  font-size: 1.6rem;
+}
+/* Red is used exclusively for the chef badge and hover effects */
+.chef-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--secondary);
+  font-size: 3rem;
+  z-index: 3;
+}
+.highlight .image-container {
+  border: 2px solid var(--secondary);
+}
+/* Gallery Section – Creative Grid on Dark Background */
+section.gallery-section {
+  background: var(--dark);
+  color: var(--primary);
+  padding: 8rem 10rem;
+  animation: fadeInUp 1s ease-out;
+}
+section.gallery-section h2 {
+  font-family: "Lobster", cursive;
+  font-size: 6rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+.gallery-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--primary);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+.gallery-overlay h3 {
+  font-family: "Lobster", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.gallery-overlay p,
+.gallery-overlay ul {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.gallery-overlay ul {
+  list-style: none;
+  padding-left: 0;
+}
+/* Three Additional Gallery Items added below */
+/* Reservation Section */
+section.reservation-section {
+  padding: 8rem 10rem;
+  background: var(--dark);
+  animation: fadeInUp 1s ease-out;
+}
+section.reservation-section h2 {
+  font-family: "Lobster", cursive;
+  font-size: 6rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--primary);
+}
+.reservation-note {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.reservation-form {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  color: var(--dark);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+.form-group textarea {
+  resize: vertical;
+  height: 120px;
+}
+.reservation-form button[type="submit"] {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 2rem;
+  padding: 1.5rem 5rem;
+  font-size: 2.4rem;
+  background: var(--primary);
+  color: var(--dark);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.reservation-form button[type="submit"]:hover {
+  background: var(--secondary);
+  transform: scale(1.05);
+}
+/* Footer */
+footer.main-footer {
+  background: var(--dark);
+  padding: 6rem 10rem 3rem;
+  border-top: 2px solid var(--primary);
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+.footer-content > div {
+  flex: 1 1 300px;
+}
+footer.main-footer h3 {
+  font-family: "Lobster", cursive;
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+footer.main-footer address,
+footer.main-footer a {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.main-footer a:hover {
+  color: var(--secondary);
+}
+.hours ul,
+.social-links ul {
+  list-style: none;
+}
+.hours li {
+  font-size: 1.6rem;
+}
+.social-links a {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: color 0.3s ease;
+}
+.social-links a:hover {
+  color: var(--secondary);
+}
+.legal-text {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-top: 4rem;
+  line-height: 1.6;
+}
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+  header.main-header,
+  section.hero,
+  section.about-section,
+  section.menu-section,
+  section.gallery-section,
+  section.reservation-section,
+  footer.main-footer {
+    padding: 4rem 5rem;
+  }
+  .nav-links a {
+    font-size: 1.8rem;
+  }
+  .hero-content h1 {
+    font-size: 10rem;
+  }
+}
+@media (max-width: 768px) {
+  .about-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .reservation-form {
+    grid-template-columns: 1fr;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-content h1 {
+    font-size: 8rem;
+  }
+  footer.main-footer {
+    padding: 4rem 2rem 2rem;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  footer.main-footer h3 {
+    font-size: 3rem;
+  }
+  footer.main-footer address,
+  footer.main-footer a {
+    font-size: 1.4rem;
+  }
+  .legal-text {
+    font-size: 1.2rem;
+  }
+}

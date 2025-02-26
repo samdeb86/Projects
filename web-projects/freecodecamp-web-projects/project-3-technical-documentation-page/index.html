@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <!-- Document Header -->
+        <header>
+            <h1>CSS Technical Documentation</h1>
+        </header>
+
+        <!-- Main Document -->
+        <main id="main-doc">
+            <!-- Tables of content -->
+            <nav id="navbar">
+                <header>
+                    <h2>Tables of Content</h2>
+                </header>
+                <section id="index-section">
+                    <ol>
+                        <li>
+                            <a href="#introduction" class="nav-link"
+                                >Introduction</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#basic_syntax" class="nav-link"
+                                >Basic Syntax</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#selectors" class="nav-link">Selectors</a>
+                        </li>
+                        <li>
+                            <a href="#box_model" class="nav-link">Box Model</a>
+                        </li>
+                        <li>
+                            <a href="#css_layout" class="nav-link"
+                                >CSS Layout</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#styling_text" class="nav-link"
+                                >Styling Text</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#colors_and_backgrounds" class="nav-link"
+                                >Colors and Backgrounds</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#pseudo-classes_and_pseudo-elements"
+                                class="nav-link"
+                                >Pseudo-Classes and Pseudo-Elements</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#css_flexbox" class="nav-link"
+                                >CSS Flexbox</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#css_grid" class="nav-link">CSS Grid</a>
+                        </li>
+                        <li>
+                            <a href="#responsive_design" class="nav-link"
+                                >Responsive Design</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#css_units" class="nav-link">CSS Units</a>
+                        </li>
+                        <li>
+                            <a href="#best_practices" class="nav-link"
+                                >Best Practices</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#resources" class="nav-link">Resources</a>
+                        </li>
+                    </ol>
+                </section>
+            </nav>
+
+            <!-- Main content of the page -->
+            <div id="main-content">
+                <!-- section 1 - Introduction to CSS -->
+                <section class="main-section" id="introduction">
+                    <header>
+                        <h2>Introduction</h2>
+                    </header>
+                    <p>
+                        <strong>CSS (Cascading Style Sheets)</strong> is a
+                        <em>stylesheet language</em> used to control the
+                        presentation of web pages. It allows developers to
+                        define styles like layout, color, and fonts for
+                        <em>HTML elements</em>.
+                    </p>
+                    <div class="code">
+                        <pre><p class="code language">html</p
+                ><code class="code block">
+  &lt;!DOCTYPE html&gt; 
+  &lt;html&gt; 
+      &lt;head&gt; 
+          &lt;style&gt; 
+              body {
+                  background-color: lightblue; 
+              } 
+              h1 { 
+                  color: navy; 
+              } 
+          &lt;/style&gt;
+  &lt;/head&gt; 
+  &lt;body&gt; 
+      &lt;h1&gt;Hello, World!&lt;/h1&gt;
+  &lt;/body&gt; 
+  &lt;/html&gt;
+
+</code></pre>
+                    </div>
+                    <hr />
+                </section>
+
+                <!-- section 2 - Basic Syntax -->
+                <section class="main-section" id="basic_syntax">
+                    <header>
+                        <h2>Basic Syntax</h2>
+                    </header>
+                    <p>CSS is composed of selectors and declaration blocks.</p>
+                    <div class="code">
+                        <pre><p class="code language">css</p
+                ><code class="code block">
+  selector {
+    property: value;
+    property: value;
+  }
+
+</code></pre>
+                    </div>
+                    <ul>
+                        <li>
+                            <strong>Selector:</strong> Defines the HTML elements
+                            to apply styles to.
+                        </li>
+                        <li>
+                            <strong>Property:</strong> The style aspect being
+                            modified (e.g.,
+                            <code class="code inline">color</code>,
+                            <code class="code inline">font-size</code>).
+                        </li>
+                        <li>
+                            <strong>Value:</strong> The setting for the style
+                            property (e.g.,
+                            <code class="code inline">red</code>,
+                            <code class="code inline">16px</code>).
+                        </li>
+                    </ul>
+                    <hr />
+                </section>
+
+                <!-- section 3 - Selectors -->
+                <section class="main-section" id="selectors">
+                    <header>
+                        <h2>Selectors</h2>
+                    </header>
+                    <p>
+                        Selectors are used to target HTML elements for styling.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Type Selector:</strong> Selects all elements
+                            of a given type (e.g.,
+                            <code class="code inline">h1</code>,
+                            <code class="code inline">p</code>).
+                            <div class="code">
+                                <pre><p class="code language">css</p
+                    ><code class="code block">
+  p {
+    color: red;
+  }
+
+</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Class Selector:</strong> Targets elements
+                            with a specific class using
+                            <code class="code inline">.</code> .
+                            <div class="code">
+                                <pre><p class="code language">css</p
+                    ><code class="code block">
+  .my-class {
+      font-size: 20px;
+  }
+
+</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>ID Selector:</strong> Targets an element
+                            with a specific ID using
+                            <code class="code inline">#</code>.
+                            <div class="code">
+                                <pre><p class="code language">css</p
+                    ><code class="code block">
+  #my-id {
+      background-color: yellow;
+  }
+
+</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                    <hr />
+                </section>
+
+                <!-- section 4 - Box Model -->
+                <section class="main-section" id="box_model">
+                    <header>
+                        <h2>Box Model</h2>
+                    </header>
+                    <p>
+                        The box model describes how the size of an element is
+                        calculated, including padding, borders, and margins.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Content:</strong> The inner content of the
+                            element.
+                        </li>
+                        <li>
+                            <strong>Padding:</strong> Space between the content
+                            and the border.
+                        </li>
+                        <li>
+                            <strong>Border:</strong> The edge around the padding
+                            (optional).
+                        </li>
+                        <li>
+                            <strong>Margin:</strong> Space between the border
+                            and surrounding elements.
+                        </li>
+                    </ul>
+                    <div class="code">
+                        <pre><p class="code language">css</p
+                ><code class="code block">
+  div {
+      padding: 10px;
+      border: 5px solid black;
+      margin: 20px;
+  }
+
+</code></pre>
+                    </div>
+                    <hr />
+                </section>
+
+                <!-- section 5 - CSS Layout -->
+                <section class="main-section" id="css_layout">
+                    <header>
+                        <h2>CSS Layout</h2>
+                    </header>
+                    <p>CSS offers several layout techniques, including:</p>
+                    <ul>
+                        <li>
+                            <strong>Normal Flow:</strong> The default layout
+                            behavior.
+                        </li>
+                        <li>
+                            <strong>Flexbox:</strong> Used for 1-dimensional
+                            layouts.
+                        </li>
+                        <li>
+                            <strong>Grid:</strong> Used for 2-dimensional
+                            layouts.
+                        </li>
+                        <li>
+                            <strong>Float:</strong> Pushes elements to the left
+                            or right.
+                        </li>
+                    </ul>
+                    <div class="code">
+                        <pre><p class="code language">css</p
+                ><code class="code block">
+  .container {
+      display: flex;
+  }
+
+</code></pre>
+                    </div>
+                    <hr />
+                </section>
+
+                <!-- section 6 - Styling Text -->
+                <section class="main-section" id="styling_text">
+                    <header>
+                        <h2>Styling Text</h2>
+                    </header>
+                    <p>CSS allows control over typography.</p>
+                    <ul>
+                        <li><strong>font-family:</strong> Defines the font.</li>
+                        <li>
+                            <strong>font-size:</strong> Adjusts the size of the
+                            text.
+                        </li>
+                        <li><strong>color:</strong> Changes the text color.</li>
+                        <li>
+                            <strong>text-align:</strong> Aligns text (<code
+                                class="code inline"
+                                >left</code
+                            >, <code class="code inline">right</code>,
+                            <code class="code inline">center</code>).
+                        </li>
+                    </ul>
+                    <div class="code">
+                        <pre><p class="code language">css</p
+                ><code class="code block">
+  h1 {
+      font-family: Arial, sans-serif;
+      color: blue;
+      text-align: center;
+  }
+
+</code></pre>
+                    </div>
+                    <hr />
+                </section>
+
+                <!-- section 7 - Colors and Backgrounds -->
+                <section class="main-section" id="colors_and_backgrounds">
+                    <header>
+                        <h2>Colors and Backgrounds</h2>
+                    </header>
+                    <p>
+                        CSS supports various ways to specify colors and
+                        background images.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Color Values:</strong> Named colors, hex,
+                            RGB, RGBA, HSL.
+                            <div class="code">
+                                <pre><p class="code language">css</p
+                    ><code class="code block">
+  body {
+      background-color: #f0f0f0;
+      color: #333;
+  }
+
+</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Background Image:</strong>
+                            <div class="code">
+                                <pre><p class="code language">css</p
+                    ><code class="code block">
+  body {
+      background-image: url('background.jpg');
+      background-size: cover;
+  }
+
+</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <hr />
+                </section>
+
+                <!-- section 8 - Pseudo-Classes and Pseudo-Elements
+CSS Flexbox -->
+                <section
+                    class="main-section"
+                    id="pseudo-classes_and_pseudo-elements"
+                >
+                    <header>
+                        <h2>Pseudo-Classes and Pseudo-Elements</h2>
+                    </header>
+                    <p>
+                        Pseudo-classes and pseudo-elements are special selectors
+                        used for styling based on state or partial elements.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>:hover:</strong> Styles an element when
+                            hovered.
+                            <div class="code">
+                                <pre><p class="code language">css</p
+                    ><code class="code block">
+  a:hover {
+      color: red;
+  }
+
+</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>::before</strong> and
+                            <strong>::after:</strong> Insert content before or
+                            after an element.
+                            <div class="code">
+                                <pre><p class="code language">css</p
+                    ><code class="code block">
+  h1::before {
+      content: "★ ";
+      color: gold;
+  }
+
+</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <hr />
+                </section>
+
+                <!-- section 9 - CSS Flexbox -->
+                <section class="main-section" id="css_flexbox">
+                    <header>
+                        <h2>CSS Flexbox</h2>
+                    </header>
+                    <p>
+                        Flexbox is a layout model that allows responsive design
+                        in 1D (row/column).
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>display: flex:</strong> Turns an element
+                            into a flex container.
+                        </li>
+                        <li>
+                            <strong>justify-content:</strong> Aligns items
+                            horizontally (<code class="code inline">center</code
+                            >, <code class="code inline">space-between</code>).
+                        </li>
+                        <li>
+                            <strong>align-items:</strong> Aligns items
+                            vertically.
+                        </li>
+                    </ul>
+                    <div class="code">
+                        <pre><p class="code language">css</p
+                ><code class="code block">
+  .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+</code></pre>
+                    </div>
+                    <hr />
+                </section>
+
+                <!-- section 10 - CSS Grid -->
+                <section class="main-section" id="css_grid">
+                    <header>
+                        <h2>CSS Grid</h2>
+                    </header>
+                    <p>CSS Grid is a powerful 2D layout system.</p>
+                    <ul>
+                        <li>
+                            <strong>display: grid:</strong> Turns an element
+                            into a grid container.
+                        </li>
+                        <li>
+                            <strong>grid-template-columns:</strong> Defines
+                            column sizes.
+                        </li>
+                        <li>
+                            <strong>grid-template-rows:</strong> Defines row
+                            sizes.
+                        </li>
+                    </ul>
+                    <div class="code">
+                        <pre><p class="code language">css</p
+                ><code class="code block">
+  .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+
+</code></pre>
+                    </div>
+                    <hr />
+                </section>
+
+                <!-- section 11 - Responsive Design -->
+                <section class="main-section" id="responsive_design">
+                    <header>
+                        <h2>Responsive Design</h2>
+                    </header>
+                    <p>
+                        Responsive design ensures your webpage looks good on all
+                        devices. Key techniques include:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Media Queries:</strong> Apply different
+                            styles based on screen size.
+                            <div class="code">
+                                <pre><p class="code language">css</p
+                    ><code class="code block">
+  @media (max-width: 600px) {
+      body {
+          background-color: lightgrey;
+      }
+  }
+
+</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Responsive Units:</strong> Use
+                            <code class="code inline">%</code>,
+                            <code class="code inline">em</code>,
+                            <code class="code inline">vw</code>, etc.
+                            <div class="code">
+                                <pre><p class="code language">css</p
+                    ><code class="code block">
+  body {
+      font-size: 2vw;
+  }
+
+</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                    <hr />
+                </section>
+
+                <!-- section 12 - CSS Units -->
+                <section class="main-section" id="css_units">
+                    <header>
+                        <h2>CSS Units</h2>
+                    </header>
+                    <p>CSS supports different units for measuring sizes.</p>
+                    <ul>
+                        <li><strong>px:</strong> Pixels.</li>
+                        <li>
+                            <strong>%:</strong> Percentage of parent element
+                            size.
+                        </li>
+                        <li>
+                            <strong>em:</strong> Relative to the font size of
+                            the element.
+                        </li>
+                        <li>
+                            <strong>rem:</strong> Relative to the root font
+                            size.
+                        </li>
+                    </ul>
+                    <div class="code">
+                        <pre><p class="code language">css</p
+                ><code class="code block">
+  p {
+      font-size: 1.5em;
+      margin: 20px;
+  }
+
+</code></pre>
+                    </div>
+                    <hr />
+                </section>
+
+                <!-- section 13 - Best Practices -->
+                <section class="main-section" id="best_practices">
+                    <header>
+                        <h2>Best Practices</h2>
+                    </header>
+                    <ol>
+                        <li>
+                            <strong>Use Classes Over IDs:</strong> For styling,
+                            classes provide more flexibility.
+                        </li>
+                        <li>
+                            <strong>Organize Your Styles:</strong> Group related
+                            styles to enhance readability.
+                        </li>
+                        <li>
+                            <strong>Minimize Use of Inline Styles:</strong> Use
+                            external or internal CSS for better maintainability.
+                        </li>
+                        <li>
+                            <strong>Use Shorthand Properties:</strong> Simplify
+                            your styles using CSS shorthand.
+                        </li>
+                        <li>
+                            <strong>Comment Your Code:</strong> Provide useful
+                            comments to explain complex sections.
+                        </li>
+                    </ol>
+                    <hr />
+                </section>
+
+                <!-- section 14 - Resources -->
+                <section class="main-section" id="resources">
+                    <header>
+                        <h2>Resources</h2>
+                    </header>
+                    <ol>
+                        <li>
+                            <a href="https://css-tricks.com/">CSS Tricks</a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                                >MDN CSS Documentation</a
+                            >
+                        </li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+
+        <hr />
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-content">
+                <button><a href="#">Back to top</a></button>
+                <address>
+                    Author: Samiran Debnath<br />
+                    Email:
+                    <a href="mailto:samdebsam86@gmail.com"
+                        >samdebsam86@gmail.com</a
+                    >
+                </address>
+            </div>
+        </footer>
+    </body>
+</html>
