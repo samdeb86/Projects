@@ -1,5 +1,5 @@
-# Demo
+# Projects
 
-This is my first Git Repository
+This is my Coding Project Repository
 <br>
 Author - Samiran Debnath
