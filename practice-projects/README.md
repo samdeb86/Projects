@@ -1,6 +1,5 @@
 # My Practice Projects
 <br>
-<br>
 All my practice projects are here.
 <br>
 <br>
